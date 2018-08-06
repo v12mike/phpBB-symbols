@@ -17,4 +17,10 @@
 
 #tabs ul li a.symbol-tab{
     padding: 3px;
+    padding-bottom: 0;
+    height: 25px;
+}
+
+#smiley-box > #tabs{
+    margin: 0;
 }
