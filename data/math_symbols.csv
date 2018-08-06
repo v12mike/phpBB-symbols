@@ -1,0 +1,56 @@
+Alpha Code,Numeric Code,Description
+&minus;,&#8722;,Minus
+&not;,&#172;,Negation
+&times;,&#215;,Multiplication
+&divide;,&#247;,Divide
+&lowast;,&#8727;,Asterisk (Lowast)
+&radic;,&#8730;,Square root
+&forall;,&#8704;,For all
+&part;,&#8706;,Part
+&exist;,&#8707;,Exist
+&empty;,&#8709;,Empty
+&nabla;,&#8711;,Nabla
+&isin;,&#8712;,Is in
+&notin;,&#8713;,Not in
+&ni;,&#8715;,Ni
+&prod;,&#8719;,Product
+&sum;,&#8721;,Sum
+&plusmn;,&#177;,Plus or minus
+&prop;,&#8733;,Proportional to
+&infin;,&#8734;,Infinity
+&ang;,&#8736;,Angle
+&and;,&#8743;,And
+&or;,&#8744;,Or
+&cap;,&#8745;,Cap
+&cup;,&#8746;,Cup
+&int;,&#8747;,Integral
+&there4;,&#8756;,Therefore
+&tilde;,&#732;,Tilde
+&sim;,&#8764;,Similar to
+&cong;,&#8773;,Congurent to
+&asymp;,&#8776;,Almost equal
+&ne;,&#8800;,Not equal
+&equiv;,&#8801;,Equivalent
+&le;,&#8804;,Less or equal
+&ge;,&#8805;,Greater or equal
+&sub;,&#8834;,Subset of
+&sup;,&#8835;,Superset of
+&nsub;,&#8836;,Not subset of
+&sube;,&#8838;,Subset or equal
+&supe;,&#8839;,Superset or equal
+&oplus;,&#8853;,Circled plus
+&otimes;,&#8855;,Circled times
+&perp;,&#8869;,Perpendicular
+&sdot;,&#8901;,Dot operator
+&sup1;,&#185;,Superscript 1
+&sup2;,&#178;,Superscript 2
+&sup3;,&#179;,Superscript 3
+&frac14;,&#188;,Fraction 1/4
+&frac12;,&#189;,Fraction 1/2
+&frac34;,&#190;,Fraction 3/4
+&ordm;,&#186;,Masculine ordinal indicator
+&ordf;,&#170;,Feminine ordinal indicator
+&lceil;,&#8968;,Left ceiling
+&rceil;,&#8969;,Right ceiling
+&lfloor;,&#8970;,Left floor
+&rfloor;,&#8971;,Right floor

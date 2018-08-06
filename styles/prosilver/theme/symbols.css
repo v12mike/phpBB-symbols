@@ -1,0 +1,16 @@
+
+#smilies-tab{
+	margin: 0;
+}
+
+#smilies-panel-tab{
+}
+
+#symbols-button {
+	margin: 0;
+	padding: 0;
+	min-width: 20px;
+	height: 20px;
+	font-size: 14px;
+    text-align: center;
+}
