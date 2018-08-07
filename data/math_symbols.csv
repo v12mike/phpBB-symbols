@@ -1,8 +1,12 @@
 Alpha Code,Numeric Code,Description
 &minus;,&#8722;,Minus
-&not;,&#172;,Negation
 &times;,&#215;,Multiplication
 &divide;,&#247;,Divide
+&sum;,&#8721;,Sum
+&sdot;,&#8901;,Dot operator
+&and;,&#8743;,And
+&or;,&#8744;,Or
+&not;,&#172;,Negation
 &lowast;,&#8727;,Asterisk (Lowast)
 &radic;,&#8730;,Square root
 &forall;,&#8704;,For all
@@ -14,13 +18,10 @@ Alpha Code,Numeric Code,Description
 &notin;,&#8713;,Not in
 &ni;,&#8715;,Ni
 &prod;,&#8719;,Product
-&sum;,&#8721;,Sum
 &plusmn;,&#177;,Plus or minus
 &prop;,&#8733;,Proportional to
 &infin;,&#8734;,Infinity
 &ang;,&#8736;,Angle
-&and;,&#8743;,And
-&or;,&#8744;,Or
 &cap;,&#8745;,Cap
 &cup;,&#8746;,Cup
 &int;,&#8747;,Integral
@@ -41,7 +42,6 @@ Alpha Code,Numeric Code,Description
 &oplus;,&#8853;,Circled plus
 &otimes;,&#8855;,Circled times
 &perp;,&#8869;,Perpendicular
-&sdot;,&#8901;,Dot operator
 &sup1;,&#185;,Superscript 1
 &sup2;,&#178;,Superscript 2
 &sup3;,&#179;,Superscript 3

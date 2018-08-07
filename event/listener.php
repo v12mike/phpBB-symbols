@@ -50,6 +50,7 @@ class listener implements EventSubscriberInterface
 		return array(
 			'core.user_setup'							=> 'load_language_on_setup',
             'core.posting_modify_template_vars'         => 'posting_modify_template_vars',
+            'core.ucp_pm_compose_modify_data'   => 'posting_modify_template_vars',
 		);
 	}
 
