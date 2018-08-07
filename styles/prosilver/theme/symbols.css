@@ -16,11 +16,24 @@
 }
 
 #tabs ul li a.symbol-tab{
-    padding: 3px;
+    padding: 4px 2px 0 2px;
     padding-bottom: 0;
     height: 25px;
 }
 
 #smiley-box > #tabs{
     margin: 0;
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1200px) {
+    /* Main message box */
+    .message-box {
+    	width: 74%;
+    }
+
+    /* Emoticons panel */
+    .smiley-box {
+    	width: 25%;
+    	float: right;
+    }
 }
