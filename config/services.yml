@@ -3,6 +3,7 @@ services:
         class: v12mike\symbols\event\listener
         arguments:
             - '@template'
+            - '@user'
             - ext/v12mike/symbols/
         tags:
             - { name: event.listener }

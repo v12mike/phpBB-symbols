@@ -11,6 +11,7 @@
 namespace v12mike\symbols\event;
 
 use phpbb\template\template;
+use phpbb\user;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use v12mike\symbols\ext;
 
@@ -25,6 +26,9 @@ class listener implements EventSubscriberInterface
 	/** @var string phpBB root path */
 	protected $ext_root_path;
 
+	/** @var user */
+	protected $user;
+
 	/**
 	 * Constructor
 	 *
@@ -32,9 +36,10 @@ class listener implements EventSubscriberInterface
 	 * @param string          $ext_root_path
 	 * @access public
 	 */
-	public function __construct(template $template, $ext_root_path)
+	public function __construct(template $template, user $user, $ext_root_path)
 	{
         $this->template = $template;
+		$this->user = $user;
 		$this->ext_root_path = $ext_root_path;
 	}
 
@@ -48,9 +53,9 @@ class listener implements EventSubscriberInterface
 	public static function getSubscribedEvents()
 	{
 		return array(
-			'core.user_setup'							=> 'load_language_on_setup',
-            'core.posting_modify_template_vars'         => 'posting_modify_template_vars',
-            'core.ucp_pm_compose_modify_data'   => 'posting_modify_template_vars',
+			'core.user_setup'					    => 'load_language_on_setup',
+            'core.posting_modify_template_vars'     => 'posting_modify_template_vars',
+            'core.ucp_pm_compose_modify_data'       => 'posting_modify_template_vars',
 		);
 	}
 
@@ -106,10 +111,11 @@ class listener implements EventSubscriberInterface
     		$id = 0;
     		foreach ($groups as $group)
             {
+                $test = $this->user->lang[$group['Name']];
                 $template->assign_block_vars('symbols_box', array(
     				'SYMBOLS_TAB_ID'     => 'sym' . $id . '-panel-tab',
     				'SYMBOLS_TAB_PANEL'  => 'sym' . $id . '-panel',
-                    'SYMBOLS_TAB_NAME'	=> $group['Name'],
+                    'SYMBOLS_TAB_NAME'	=> $this->user->lang[$group['Name']],
                     'SYMBOLS_TAB_LABEL'	=> $group['Label'],
                     )
                 );
@@ -136,7 +142,7 @@ class listener implements EventSubscriberInterface
                     foreach ($symbols as $symbol)
                     {
                         $template->assign_block_vars('symbols_box.symbols_table', array(
-                            'SYMBOL_DESCRIPTION'	=> $symbol['Description'],
+                            'SYMBOL_DESCRIPTION'	=> $this->user->lang[$symbol['Description']],
                             'SYMBOL_CODE'	=> $symbol['Alpha Code'],
                             )
                         );
