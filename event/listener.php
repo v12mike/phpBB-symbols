@@ -77,7 +77,7 @@ class listener implements EventSubscriberInterface
 
 
     /**
-    * Fill smiley templates (or just the variables) with smilies, either in a window or inline
+    * Fill symbols templates
     */
     public function posting_modify_template_vars($event)
     {
@@ -108,13 +108,11 @@ class listener implements EventSubscriberInterface
             fclose($file_handle);
 
     		/* iterate through the groups of symbols */
-    		$id = 0;
     		foreach ($groups as $group)
             {
                 $test = $this->user->lang[$group['Name']];
                 $template->assign_block_vars('symbols_box', array(
-    				'SYMBOLS_TAB_ID'     => 'sym' . $id . '-panel-tab',
-    				'SYMBOLS_TAB_PANEL'  => 'sym' . $id . '-panel',
+    				'SYMBOLS_TAB_ID'     => $group['Identifier'],
                     'SYMBOLS_TAB_NAME'	=> $this->user->lang[$group['Name']],
                     'SYMBOLS_TAB_LABEL'	=> $group['Label'],
                     )
