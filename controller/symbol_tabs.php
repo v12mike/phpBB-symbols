@@ -1,4 +1,12 @@
 <?php
+/**
+ *
+ * phpBB Symbols extension
+ *
+ * @copyright (c) 2018 v12mike
+ * @license GNU General Public License, version 2 (GPL-2.0)
+ *
+ */
 
 use \Symfony\Component\HttpFoundation\Response;
 
