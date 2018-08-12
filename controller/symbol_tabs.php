@@ -23,33 +23,34 @@ class symbol_tabs
 	/* @var \phpbb\user */
 	protected $user;
 
+	/* @var */
+	protected $phpbb_root_path;
+
 	/**
 	 * Constructor
 	 *
 	 * @param \phpbb\controller\helper  $helper
 	 * @param \phpbb\template\template  $template
 	 * @param \phpbb\user				$user
+	 * @param 							$phpbb_root_path
 	 */
-	public function __construct(\phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\user $user)
+	public function __construct(\phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\user $user, $phpbb_root_path)
 	{
 		$this->helper   = $helper;
 		$this->template = $template;
 		$this->user 	= $user;
+		$this->phpbb_root_path = $phpbb_root_path;
 	}
 
 	/**
-	 * Demo controller for route /demo/{name}
+	 * Symbols controller for route /symbols/{$tab_id}
 	 *
-	 * @param string $name
-	 * @throws \phpbb\exception\http_exception
+	 * @param string $tab_id
 	 * @return \Symfony\Component\HttpFoundation\Response A Symfony Response object
 	 */
 	public function handle($tab_id)
 	{
-		global $user, $template;
-		global $phpEx, $phpbb_root_path;
-
-		$symbols_groups_file = $phpbb_root_path . '/ext/v12mike/symbols/data/';
+		$symbols_groups_file = $this->phpbb_root_path . '/ext/v12mike/symbols/data/';
 
 		/* read the csv file holding the symbol groups definitions */
 		$groups = $groups_header = array();
@@ -75,6 +76,9 @@ class symbol_tabs
 				/* only generate data for one tab */
 				if ($tab_id == $group['Identifier'])
 				{
+					/* load the extension language files */
+					$this->user->add_lang_ext('v12mike/symbols', array('symbols', $group['Identifier']));
+
 					$this->template->assign_vars(array(
 						'SYMBOLS_TAB_ID'	 => $group['Identifier'],
 						'SYMBOLS_TAB_NAME'	=> $this->user->lang[$group['Name']],

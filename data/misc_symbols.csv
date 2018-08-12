@@ -1,6 +1,6 @@
 Alpha Code,Numeric Code,Description
 &euro;,&#8364;,SYM_EURO
-&pound;,&#163;,YM_POUND
+&pound;,&#163;,SYM_POUND
 &yen;,&#165;,SYM_YEN
 &cent;,&#162;,SYM_CENT
 &curren;,&#164;,SYM_CURREN
@@ -22,7 +22,7 @@ Alpha Code,Numeric Code,Description
 &circ;,&#710;,SYM_CIRC
 &ndash;,&#8211;,SYM_NDASH
 &mdash;,&#8212;,SYM_MDASH
-&lsaquo;,&#8249;,YM_LSAQUO
+&lsaquo;,&#8249;,SYM_LSAQUO
 &rsaquo;,&#8250;,SYM_RSAQUO
 &laquo;,&#171;,SYM_LAQUO
 &raquo;,&#187;,SYM_RAQUO
