@@ -1,0 +1,146 @@
+<?php
+/**
+ *
+ * phpBB Symbols extension
+ *
+ * @copyright (c) 2018 v12mike
+ * @license GNU General Public License, version 2 (GPL-2.0)
+ *
+ */
+
+use \Symfony\Component\HttpFoundation\Response;
+
+namespace v12mike\symbols\controller;
+
+class symbol_tabs
+{
+	/* @var \phpbb\controller\helper */
+	protected $helper;
+
+	/* @var \phpbb\template\template */
+	protected $template;
+
+	/* @var \phpbb\user */
+	protected $user;
+
+	/* @var */
+	protected $phpbb_root_path;
+
+	/**
+	 * Constructor
+	 *
+	 * @param \phpbb\controller\helper  $helper
+	 * @param \phpbb\template\template  $template
+	 * @param \phpbb\user				$user
+	 * @param 							$phpbb_root_path
+	 */
+	public function __construct(\phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\user $user, $phpbb_root_path)
+	{
+		$this->helper   = $helper;
+		$this->template = $template;
+		$this->user 	= $user;
+		$this->phpbb_root_path = $phpbb_root_path;
+	}
+
+	/**
+	 * Symbols controller for route /symbols/{$tab_id}
+	 *
+	 * @param string $tab_id
+	 * @return \Symfony\Component\HttpFoundation\Response A Symfony Response object
+	 */
+	public function handle($tab_id)
+	{
+		switch ($tab_id)
+		{
+			case "accent-chars":
+				/* load the extension language files */
+				$this->user->add_lang_ext('v12mike/symbols', array('symbols', 'accent-chars'));
+
+				$this->template->assign_vars(array(
+					'SYMBOLS_TAB_ID'	 => 'accent-chars-panel',
+					'SYMBOLS_TAB_NAME'	=> $this->user->lang[$group['accent-chars']],
+					)
+				);
+
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_AGRAVE'],	'SYMBOL_CODE' => '&Agrave;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_AACUTE'],	'SYMBOL_CODE' => '&Aacute;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_ACIRC'],	'SYMBOL_CODE' => '&Acirc;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_ATILDE'],	'SYMBOL_CODE' => '&Atilde;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_AUML'],	'SYMBOL_CODE' => '&Auml;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_ARING'],	'SYMBOL_CODE' => '&Aring;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_AELIG'],	'SYMBOL_CODE' => '&AElig;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_CCEDIL'],	'SYMBOL_CODE' => '&Ccedil;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_EGRAVE'],	'SYMBOL_CODE' => '&Egrave;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_EACUTE'],	'SYMBOL_CODE' => '&Eacute;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_ECIRC'],	'SYMBOL_CODE' => '&Ecirc;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_EUML'],	'SYMBOL_CODE' => '&Euml;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_IGRAVE'],	'SYMBOL_CODE' => '&Igrave;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_IACUTE'],	'SYMBOL_CODE' => '&Iacute;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_ICIRC'],	'SYMBOL_CODE' => '&Icirc;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_IUML'],	'SYMBOL_CODE' => '&Iuml;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_ETH'],	'SYMBOL_CODE' => '&ETH;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_NTILDE'],	'SYMBOL_CODE' => '&Ntilde;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_OGRAVE'],	'SYMBOL_CODE' => '&Ograve;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_OACUTE'],	'SYMBOL_CODE' => '&Oacute;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_OCIRC'],	'SYMBOL_CODE' => '&Ocirc;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_OTILDE'],	'SYMBOL_CODE' => '&Otilde;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_OUML'],	'SYMBOL_CODE' => '&Ouml;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_OSLASH'],	'SYMBOL_CODE' => '&Oslash;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_OELIG'],	'SYMBOL_CODE' => '&OElig;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_SCARON'],	'SYMBOL_CODE' => '&Scaron;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_UGRAVE'],	'SYMBOL_CODE' => '&Ugrave;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_UACUTE'],	'SYMBOL_CODE' => '&Uacute;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_UCIRC'],	'SYMBOL_CODE' => '&Ucirc;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_UUML'],	'SYMBOL_CODE' => '&Uuml;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_YACUTE'],	'SYMBOL_CODE' => '&Yacute;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_YUML'],	'SYMBOL_CODE' => '&Yuml;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_U_THORN'],	'SYMBOL_CODE' => '&THORN;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_SZLIG'],	'SYMBOL_CODE' => '&szlig;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_AGRAVE'],	'SYMBOL_CODE' => '&agrave;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_AACUTE'],	'SYMBOL_CODE' => '&aacute;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_ACIRC'],	'SYMBOL_CODE' => '&acirc;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_ATILDE'],	'SYMBOL_CODE' => '&atilde;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_AUML'],	'SYMBOL_CODE' => '&auml;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_ARING'],	'SYMBOL_CODE' => '&aring;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_AELIG'],	'SYMBOL_CODE' => '&aelig;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_CCEDIL'],	'SYMBOL_CODE' => '&ccedil;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_EGRAVE'],	'SYMBOL_CODE' => '&egrave;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_EACUTE'],	'SYMBOL_CODE' => '&eacute;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_ECIRC'],	'SYMBOL_CODE' => '&ecirc;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_EUML'],	'SYMBOL_CODE' => '&euml;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_IGRAVE'],	'SYMBOL_CODE' => '&igrave;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_IACUTE'],	'SYMBOL_CODE' => '&iacute;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_ICIRC'],	'SYMBOL_CODE' => '&icirc;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_IUML'],	'SYMBOL_CODE' => '&iuml;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_ETH'],	'SYMBOL_CODE' => '&eth;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_NTILDE'],	'SYMBOL_CODE' => '&ntilde;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_OGRAVE'],	'SYMBOL_CODE' => '&ograve;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_OACUTE'],	'SYMBOL_CODE' => '&oacute;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_OCIRC'],	'SYMBOL_CODE' => '&ocirc;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_OTILDE'],	'SYMBOL_CODE' => '&otilde;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_OUML'],	'SYMBOL_CODE' => '&ouml;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_OSLASH'],	'SYMBOL_CODE' => '&oslash;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_OELIG'],	'SYMBOL_CODE' => '&oelig;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_SCARON'],	'SYMBOL_CODE' => '&scaron;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_UGRAVE'],	'SYMBOL_CODE' => '&ugrave;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_UACUTE'],	'SYMBOL_CODE' => '&uacute;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_UCIRC'],	'SYMBOL_CODE' => '&ucirc;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_UUML'],	'SYMBOL_CODE' => '&uuml;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_YACUTE'],	'SYMBOL_CODE' => '&yacute;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_THORN'],	'SYMBOL_CODE' => '&thorn;',));
+				$this->template->assign_block_vars('symbols_table', array('SYMBOL_DESCRIPTION' => $this->user->lang['SYM_L_YUML'],	'SYMBOL_CODE' => '&yuml;',));
+				break;
+
+			case "math-symbols-panel":
+				break;
+
+			case "misc-symbols-panel":
+				break;
+
+			case "greek-chars-panel":
+				break;
+		}
+
+		return $this->helper->render('symbols_tab.html', $name);
+	}
+}

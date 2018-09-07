@@ -63,41 +63,10 @@ class listener implements EventSubscriberInterface
 	*/
 	public function posting_modify_template_vars($event)
 	{
-		$symbols_groups_file_path = $phpbb_root_path . $this->ext_root_path . 'data/';
+		/* load the extension language file */
+		$this->user->add_lang_ext('v12mike/symbols', 'symbols');
 
-		/* read the csv file holding the symbol groups definitions */
-		$groups = $groups_header = array();
-		$file_handle = fopen($symbols_groups_file_path . 'symbol_groups.csv', 'r');
-		if ($file_handle)
-		{
-			while (($row = fgetcsv($file_handle, 1024)) !== false) 
-			{
-				if (empty($groups_header))
-				{
-					$groups_header = $row;
-				}
-				else
-				{
-					$groups[] = array_combine($groups_header, $row);
-				}
-			}
-			fclose($file_handle);
-
-			/* load the extension language file */
-			$this->user->add_lang_ext('v12mike/symbols', 'symbols');
-
-			/* iterate through the groups of symbols */
-			foreach ($groups as $group)
-			{
-				$this->template->assign_block_vars('symbols_box', array(
-					'SYMBOLS_TAB_ID'	 => $group['Identifier'],
-					'SYMBOLS_TAB_NAME'	=> $this->user->lang[$group['Name']],
-					'SYMBOLS_TAB_LABEL'	=> $group['Label'],
-					)
-				);
-			}
-            /* template flag to show that we at least found groups file */
-			$this->template->assign_var('SYMBOLS_TABS', 1);
-		}
+		/* template flag to show that we are showing symbols tabs */
+		$this->template->assign_var('SYMBOLS_TABS', 1);
 	}
 }
