@@ -3,7 +3,7 @@
 	"type": "phpbb-extension",
 	"description": "This extension allows users to embed symbols (HTML Entities) in posts and PMs.",
 	"homepage": "https://github.com/v12mike/symbols",
-	"version": "1.0.1-b2",
+	"version": "1.0.1-b3",
 	"keywords": [
 	        "phpbb",
 	        "extension",
@@ -13,7 +13,6 @@
 	"authors": [
 		{
 			"name": "Mike Morrin (v12mike)",
-			"homepage": "http://",
 			"role": "Developer"
 		}
 	],
