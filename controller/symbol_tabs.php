@@ -124,8 +124,8 @@ class symbol_tabs
 			'SYM_L_UCIRC'	=> '&ucirc;',	
 			'SYM_L_UUML'	=> '&uuml;',
 			'SYM_L_YACUTE'	=> '&yacute;',
-			'SYM_L_THORN'	=> '&thorn;',	
 			'SYM_L_YUML'	=> '&yuml;',
+			'SYM_L_THORN'	=> '&thorn;',	
 			),
 		'math-symbols' => array (
 			'SYM_MINUS'	=> '&minus;',
@@ -293,7 +293,7 @@ class symbol_tabs
 			),
 		);
 
-		/* load the extension language files */
+		/* load the language file for this table */
 		$this->user->add_lang_ext('v12mike/symbols', array('symbols', $tab_id));
 
 		$this->template->assign_vars(array(
@@ -302,6 +302,7 @@ class symbol_tabs
 			)
 		);
 
+		/* output the symbol table contents */
 		foreach ($symtables[$tab_id] as $name => $code)
 		{
 			$this->template->assign_block_vars('symbols_table', array(
