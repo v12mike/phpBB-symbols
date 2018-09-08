@@ -8,9 +8,9 @@
  *
  */
 
-use \Symfony\Component\HttpFoundation\Response;
-
 namespace v12mike\symbols\controller;
+
+use \Symfony\Component\HttpFoundation\Response;
 
 class symbol_tabs
 {
