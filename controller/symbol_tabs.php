@@ -109,7 +109,7 @@ class symbol_tabs
 			'SYM_L_IACUTE'	=> '&iacute;',
 			'SYM_L_ICIRC'	=> '&icirc;',
 			'SYM_L_IUML'	=> '&iuml;',
-			'SYM_L_ETH '	=> '&eth;',
+			'SYM_L_ETH'	=> '&eth;',
 			'SYM_L_NTILDE'	=> '&ntilde;',
 			'SYM_L_OGRAVE'	=> '&ograve;',
 			'SYM_L_OACUTE'	=> '&oacute;',
@@ -297,7 +297,7 @@ class symbol_tabs
 		$this->user->add_lang_ext('v12mike/symbols', array('symbols', $tab_id));
 
 		$this->template->assign_vars(array(
-			'SYMBOLS_TAB_ID'	 => $tab_id .'-panel',
+			'SYMBOLS_TAB_ID'	=> $tab_id .'-panel',
 			'SYMBOLS_TAB_NAME'	=> $this->user->lang[$symlabels[$tab_id]],
 			)
 		);
