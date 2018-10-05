@@ -57,6 +57,13 @@ class symbol_tabs
 		'greek-chars' =>  'SYM_GREEK_LETTERS',
 		);
 
+		$symlangfiles = array(
+		'accent-chars' => 'accent_chars',
+		'math-symbols' => 'math_symbols',
+		'misc-symbols' => 'misc_symbols',
+		'greek-chars' =>  'greek_chars',
+		);
+
 		$symtables = array(
 		'accent-chars' => array(
 			'SYM_U_AGRAVE'	=> '&Agrave;',
@@ -294,7 +301,7 @@ class symbol_tabs
 		);
 
 		/* load the language file for this table */
-		$this->user->add_lang_ext('v12mike/symbols', array('symbols', $tab_id));
+		$this->user->add_lang_ext('v12mike/symbols', array('symbols', $symlangfiles[$tab_id]));
 
 		$this->template->assign_vars(array(
 			'SYMBOLS_TAB_ID'	=> $tab_id .'-panel',
@@ -314,15 +321,4 @@ class symbol_tabs
 
 		return $this->helper->render('symbols_tab.html', $name);
 	}
-
-
-
-	const mathsymbols_array = array (
-	);
-
-	const miscsymbols_array = array (
-	);
-
-	const greekchars_array = array (
-	);
 }

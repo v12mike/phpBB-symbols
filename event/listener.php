@@ -20,6 +20,9 @@ use v12mike\symbols\ext;
  */
 class listener implements EventSubscriberInterface
 {
+	/** @var \phpbb\controller\helper */
+	protected $helper;
+
 	/** @var template */
 	protected $template;
 
@@ -36,8 +39,9 @@ class listener implements EventSubscriberInterface
 	 * @param string		  $ext_root_path
 	 * @access public
 	 */
-	public function __construct(template $template, user $user, $ext_root_path)
+	public function __construct(\phpbb\controller\helper $helper, template $template, user $user, $ext_root_path)
 	{
+		$this->helper = $helper;
 		$this->template = $template;
 		$this->user = $user;
 		$this->ext_root_path = $ext_root_path;
@@ -67,6 +71,12 @@ class listener implements EventSubscriberInterface
 		$this->user->add_lang_ext('v12mike/symbols', 'symbols');
 
 		/* template flag to show that we are showing symbols tabs */
-		$this->template->assign_var('SYMBOLS_TABS', 1);
+		$this->template->assign_vars(array(
+			'SYMBOLS_TABS' => 1,
+			'SYMBOLS_ACCENTS_LINK' => $this->helper->route('v12mike_symbols_route', array('tab_id' => 'accent-chars')),
+			'SYMBOLS_MATH_LINK' => $this->helper->route('v12mike_symbols_route', array('tab_id' => 'math-symbols')),
+			'SYMBOLS_MISC_LINK' => $this->helper->route('v12mike_symbols_route', array('tab_id' => 'misc-symbols')),
+			'SYMBOLS_GREEK_LINK' => $this->helper->route('v12mike_symbols_route', array('tab_id' => 'greek-chars')),
+            ));
 	}
 }
