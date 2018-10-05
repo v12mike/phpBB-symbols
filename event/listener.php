@@ -73,10 +73,10 @@ class listener implements EventSubscriberInterface
 		/* template flag to show that we are showing symbols tabs */
 		$this->template->assign_vars(array(
 			'SYMBOLS_TABS' => 1,
-			'SYMBOLS_ACCENTS_LINK' => $this->helper->route('v12mike_symbols_route', array('tab_id' => 'accent-chars')),
-			'SYMBOLS_MATH_LINK' => $this->helper->route('v12mike_symbols_route', array('tab_id' => 'math-symbols')),
-			'SYMBOLS_MISC_LINK' => $this->helper->route('v12mike_symbols_route', array('tab_id' => 'misc-symbols')),
-			'SYMBOLS_GREEK_LINK' => $this->helper->route('v12mike_symbols_route', array('tab_id' => 'greek-chars')),
+			'U_ACCENTS_LINK' => $this->helper->route('v12mike_symbols_route', array('tab_id' => 'accent-chars')),
+			'U_MATH_LINK' => $this->helper->route('v12mike_symbols_route', array('tab_id' => 'math-symbols')),
+			'U_MISC_LINK' => $this->helper->route('v12mike_symbols_route', array('tab_id' => 'misc-symbols')),
+			'U_GREEK_LINK' => $this->helper->route('v12mike_symbols_route', array('tab_id' => 'greek-chars')),
             ));
 	}
 }
