@@ -213,6 +213,7 @@ class symbol_tabs
 			'SYM_DDAGGER'	=> '&Dagger;',
 			'SYM_TRADE'	=> '&trade;',
 			'SYM_REG'	=> '&reg;',
+			'SYM_COPY'	=> '&copy;',
 			'SYM_PARA'	=> '&para;',
 			'SYM_L_FNOF'	=> '&fnof;',
 			'SYM_CIRC'	=> '&circ;',
