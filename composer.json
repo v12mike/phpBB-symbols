@@ -3,7 +3,7 @@
 	"type": "phpbb-extension",
 	"description": "This extension allows users to embed symbols (HTML Entities) in posts and PMs.",
 	"homepage": "https://github.com/v12mike/symbols",
-	"version": "1.0.2-b1",
+	"version": "1.0.2",
 	"keywords": [
 	        "phpbb",
 	        "extension",
@@ -19,7 +19,7 @@
 	"require": {
 		"php": ">=5.3.3",
 		"composer/installers": "~1.0",
-		"phpbb/phpbb": ">=3.2.0,<3.3"
+		"phpbb/phpbb": ">=3.2.0,<3.4.0@dev"
 	},
 	"extra": {
 		"display-name": "Symbols",
@@ -28,6 +28,7 @@
 		},
 		"version-check": {
 			"host": "frenchcarforum.co.uk",
+			"ssl":"true",
 			"directory": "/versions",
 			"filename": "phpbb-symbols.json"
 		}
